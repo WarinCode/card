@@ -1,6 +1,6 @@
 let username = '';
 let followerCount = 0;
-let random = Math.round(Math.random() * 10000);
+let randomFollower= Math.round(Math.random() * 10000);
 
 const card = document.createElement('div');
 const render = document.querySelector(".render");
@@ -33,7 +33,7 @@ window.addEventListener('load', fetchAPI('https://random-data-api.com/api/v2/use
                         </div>  
                         <div class="card-group-follow">
                             <i class="fa-solid fa-user-group"></i><p>Followers <span class="follower-number">${followerCount}</span></p>       
-                            <i class="fa-solid fa-users"></i><p>Following <span class="follower-number">${random}</span></p>         
+                            <i class="fa-solid fa-users"></i><p>Following <span class="follower-number">${randomFollower}</span></p>         
                         </div>
                     </div>
                     <div class="card-detail">
@@ -63,8 +63,7 @@ window.addEventListener('load', fetchAPI('https://random-data-api.com/api/v2/use
 function changeButtonName() {
     const btn = document.querySelector('#btn');
     const followerNumber = document.querySelector('.follower-number')
-    if (btn.classList.toString() == 'btn') {
-        btn.classList.toggle('btn-following');
+    if (btn.classList.toggle('btn-following')) {
         followerCount += 1;
         localStorage.setItem("number", followerCount);
         followerNumber.innerHTML = followerCount;
@@ -75,7 +74,6 @@ function changeButtonName() {
         followerNumber.innerHTML = localStorage.getItem("number");
     }
     function unFollow() {
-        btn.classList.toggle('btn-following');
         btn.innerHTML = 'Follow';
     }
 }
