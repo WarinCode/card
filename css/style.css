@@ -151,3 +151,37 @@ body {
 .btn-following {
     background-color: rgb(105, 231, 32);
 }
+
+
+@media screen and (max-width:600px) and (min-width:300px){
+    .card{   
+        width: 385px;
+        min-width: 370px;
+        height: 540px;
+    }
+
+    .card-items p {
+        font-size:12px;
+        margin: 0;
+    }
+
+    .card-header h2 {
+        font-size: 24px;
+    }
+    
+    .card-header p {
+        font-size: 14px;
+    }
+
+    .card-detail {
+        margin-top: 15px;
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 90px);
+        grid-template-rows: 60px;
+        grid-gap: 4px;
+    }
+    
+    /* width: 430px;
+    height: 630px; */
+}
