@@ -63,17 +63,22 @@ window.addEventListener('load', fetchAPI('https://random-data-api.com/api/v2/use
 function changeButtonName() {
     const btn = document.querySelector('#btn');
     const followerNumber = document.querySelector('.follower-number')
-    if (btn.classList.toggle('btn-following')) {
+    btn.classList.toggle('btn-following');
+    let checkClass  = [...btn.classList].includes('btn-following');
+    if (checkClass){
         followerCount += 1;
         localStorage.setItem("number", followerCount);
         followerNumber.innerHTML = followerCount;
         btn.innerHTML = 'Following <i class="fa-solid fa-circle-check"></i>'
     } else {
-        confirm(`คุณต้องการยกเลิกติดตาม ${username} ไหม?`) ? unFollow() : false;
-        localStorage.setItem("number", followerCount -= 1);
-        followerNumber.innerHTML = localStorage.getItem("number");
+        let conf = confirm(`คุณต้องการยกเลิกติดตาม ${username} ไหม?`) ? unFollow() : btn.classList.toggle('btn-following');
+        if(conf === undefined){
+            localStorage.setItem("number", followerCount -= 1);
+            followerNumber.innerHTML = localStorage.getItem("number");
+        }
     }
     function unFollow() {
+        btn.classList.remove('btn-following');
         btn.innerHTML = 'Follow';
     }
 }
