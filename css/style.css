@@ -7,7 +7,7 @@ body {
     font-family: 'IBM Plex Sans', sans-serif;
     margin: 0;
     padding: 0;
-    height:1000px;
+    height:1200px;
     width: 100%;
     /* background-color: rgb(156, 118, 104); */
 }
@@ -69,7 +69,7 @@ body {
     display: grid;
     place-items: center;
     margin-top: 40px;
-    padding: 20px 20px 12px;
+    padding: 20px 20px 6px;
 }
 
 .card-header {
@@ -96,7 +96,7 @@ body {
 }
 
 .card-detail {
-    margin-top: 15px;
+    margin: 15px 0 7px;
     display: grid;
     grid-template-columns: repeat(3, 120px);
     grid-template-rows: 100px;
@@ -120,11 +120,10 @@ body {
     color: #2c2c2c;
 }
 .card-btn{
-    margin: 0 0 30px;
     text-align: center;
     position: absolute;
+    bottom: 2.3%;
     left: 20%;
-    padding: 5px;
 }
 .btn , .btn-following{
     cursor: pointer;
@@ -153,11 +152,11 @@ body {
 }
 
 
-@media screen and (max-width:600px) and (min-width:300px){
+@media screen and (min-width:300px) and (max-width:600px){
     .card{   
         width: 385px;
         min-width: 370px;
-        height: 610px;
+        height: 600px;
     }
 
     .card-items p {
@@ -181,8 +180,28 @@ body {
         grid-template-rows: 60px;
         grid-gap: 4px;
     }
-    
+
     .card-btn{
-    margin: 8px 0 14px;
+        margin: 0 0 10px;
+    }
 }
+
+@media screen and (max-height:1024px) and (min-height:700px){
+    .card-btn{
+        margin: 21px 0 6px;
+    }
+}
+
+@media screen and (max-height:900px) and (min-height:800px){
+    .card{   
+        height: 600px;
+        max-height: 630px;
+        min-height: 580px;
+    }
+}
+
+@media screen and (max-height:1500px) and (min-height:1200px){
+    .card-btn{
+        margin: 3px 0 23px;
+    }
 }
